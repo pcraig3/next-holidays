@@ -36,7 +36,6 @@ Provinces.getInitialProps = async function(props) {
   try {
     const res = await fetch(`http://35.222.86.86:8080/v1/provinces/${province}`)
     data = await res.json()
-    console.log(data)
   } catch (e) {
     return { ...notFound, province }
   }
