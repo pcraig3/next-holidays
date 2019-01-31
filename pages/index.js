@@ -1,12 +1,30 @@
+import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
 
-const Index = () => (
+const Index = ({ provinces }) => (
   <Layout>
-    <h1>Provinces</h1>
-    <p>
-      You are from <a href="/provinces/ON">Ontario</a>.
-    </p>
+    <h1>When is your next holiday?</h1>
+    <ul>
+      {provinces.map(province => (
+        <li key={province.id}>
+          <a href={`/provinces/${province.id}`}>{province.nameEn}</a>
+        </li>
+      ))}
+    </ul>
   </Layout>
 )
+
+Index.getInitialProps = async function() {
+  let data = {}
+
+  try {
+    const res = await fetch(`http://35.222.86.86:8080/v1/provinces`)
+    data = await res.json()
+  } catch (e) {
+    // in this case, we will still return an empty data object
+  }
+
+  return data
+}
 
 export default Index

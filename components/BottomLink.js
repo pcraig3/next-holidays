@@ -1,11 +1,7 @@
-import Link from 'next/link'
-
 export default ({ href, linkText }) => (
   <React.Fragment>
     <p>
-      <Link href={href}>
-        <a>{`${linkText}`}</a>
-      </Link>
+      <a href={href}>{`${linkText}`}</a>
     </p>
     <style jsx>{`
       p {

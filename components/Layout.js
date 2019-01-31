@@ -14,6 +14,7 @@ const Layout = props => (
         padding-left: 15px;
         padding-right: 10px;
         max-width: 960px;
+        background-color: snow;
       }
 
       h1, h2 {
@@ -23,9 +24,29 @@ const Layout = props => (
         margin-bottom: 25px;
         }
       }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        padding-bottom: 5px;
+      }
+
+      a, a:visited {
+        color: dodgerblue;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
       @media only screen and (max-width: 600px) {
         body {
-          background-color: lightblue;
+          background-color: snow;
         }
       }
     `}</style>
