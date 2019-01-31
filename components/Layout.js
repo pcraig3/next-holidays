@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 const Layout = props => (
-  <div>
+  <div role="main">
     <Head>
       <title>{props.title ? `${props.title} ` : 'next holidays'}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -36,7 +36,7 @@ const Layout = props => (
       }
 
       a, a:visited {
-        color: dodgerblue;
+        color: #0572d5;
         text-decoration: none;
       }
 
