@@ -44,9 +44,21 @@ const Layout = props => (
         text-decoration: underline;
       }
 
+      @media only screen and (max-width: 900px) {
+        body {
+          font-size: 24px;
+        }
+      }
+
       @media only screen and (max-width: 600px) {
         body {
-          background-color: snow;
+          font-size: 22px;
+        }
+      }
+
+      @media only screen and (max-width: 320px) {
+        body {
+          font-size: 18px;
         }
       }
     `}</style>

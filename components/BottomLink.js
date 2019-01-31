@@ -5,7 +5,7 @@ export default ({ href, linkText }) => (
     </p>
     <style jsx>{`
       p {
-        position: absolute;
+        position: fixed;
         bottom: 0;
       }
     `}</style>
