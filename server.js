@@ -10,6 +10,12 @@ app
   .then(() => {
     const server = express()
 
+    server.get('/provinces/:p', (req, res) => {
+      const actualPage = '/provinces'
+      const queryParams = { province: req.params.p }
+      app.render(req, res, actualPage, queryParams)
+    })
+
     server.get('*', (req, res) => {
       return handle(req, res)
     })

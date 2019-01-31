@@ -1,46 +1,40 @@
-import fetch from 'isomorphic-unfetch'
 import Link from 'next/link'
+import fetch from 'isomorphic-unfetch'
+import format from 'date-fns/format'
 import Layout from '../components/Layout'
 import ProvinceFound from '../components/ProvinceFound'
-var format = require('date-fns/format')
+import ProvinceNotFound from '../components/ProvinceNotFound'
 
-const ProvinceNotFound = ({ province }) => (
-  <React.Fragment>
-    <h1>Whoops</h1>
-    <p>Nothing found for ‘{`${province}`}’</p>
-  </React.Fragment>
-)
-
-const Provinces = ({ found, data, province }) => (
+const Provinces = ({ data, province }) => (
   <Layout
     title={
-      data.province
-        ? `${data.province.nameEn}’s next holiday`
-        : `${province} not found`
+      data.error
+        ? `${province} not found`
+        : `${data.province.nameEn}’s next holiday`
     }
   >
-    {found ? (
-      <ProvinceFound province={data.province} />
+    {data.error ? (
+      <ProvinceNotFound errorMessage={data.error.message} />
     ) : (
-      <ProvinceNotFound province={province} />
+      <ProvinceFound province={data.province} />
     )}
   </Layout>
 )
 
 Provinces.getInitialProps = async function(props) {
   let data = {}
-  let province = 'ON'
+  let province = props.query.province
 
-  const notFound = { found: false, data, province }
+  const notFound = { data, province }
 
   try {
     const res = await fetch(`http://35.222.86.86:8080/v1/provinces/${province}`)
     data = await res.json()
   } catch (e) {
-    return { ...notFound, province }
+    return notFound
   }
 
-  return { found: true, data, province }
+  return { data, province }
 }
 
 export default Provinces
