@@ -10,6 +10,10 @@ app
   .then(() => {
     const server = express()
 
+    server.get('/provinces', (req, res) => {
+      res.redirect('/')
+    })
+
     server.get('/provinces/:p', (req, res) => {
       const actualPage = '/provinces'
       const queryParams = { province: req.params.p }
