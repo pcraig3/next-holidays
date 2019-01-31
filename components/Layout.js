@@ -1,21 +1,34 @@
 import Head from 'next/head'
-import Header from './Header'
-
-const layoutStyle = {
-  fontSize: 28,
-  fontFamily: 'sans-serif',
-  marginTop: 15,
-  paddingLeft: 15,
-  paddingRight: 10,
-}
 
 const Layout = props => (
-  <div style={layoutStyle}>
+  <div>
     <Head>
-      <title>{props.title ? `${props.title} — ` : null} TV srch</title>
+      <title>{props.title ? `${props.title} ` : 'next holidays'}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <Header />
+    <style jsx global>{`
+      body {
+        font-size: 28px;
+        font-family: sans-serif;
+        margin-top: 15px;
+        padding-left: 15px;
+        padding-right: 10px;
+        max-width: 960px;
+      }
+
+      h1, h2 {
+        font-weight: 400;
+        font-size: 200%;
+        margin-top: 0;
+        margin-bottom: 25px;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+    `}</style>
     {props.children}
   </div>
 )

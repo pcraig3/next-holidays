@@ -1,9 +1,10 @@
 {
-  "name": "next-no-js",
+  "name": "next-holidays",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "date-fns": "^1.30.1",
     "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.2",
