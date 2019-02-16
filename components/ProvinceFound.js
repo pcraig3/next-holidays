@@ -6,6 +6,10 @@ import BottomLink from './BottomLink'
 
 const space2Nbsp = str => str.replace(/ /g, ' ')
 
+const getPossessive = name => {
+  return name.endsWith('s') ? `${name}’` : `${name}’s`
+}
+
 const getDateAtNoonFromString = str => addHours(new Date(str), 12)
 
 const DateHtml = ({ dateString }) => (
@@ -27,7 +31,7 @@ HolidaysLink.propTypes = {
 const ProvinceFound = ({ province }) => (
   <React.Fragment>
     <h1>
-      {province.nameEn}’s next public holiday is{' '}
+      {getPossessive(province.nameEn)} next public holiday is{' '}
       {space2Nbsp(province.nextHoliday.nameEn)}, on{' '}
       <DateHtml dateString={province.nextHoliday.date} />.
     </h1>

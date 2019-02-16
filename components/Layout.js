@@ -33,7 +33,7 @@ const Layout = props => (
       }
 
       li {
-        padding-bottom: 5px;
+        padding-bottom: 8px;
       }
 
       a, a:visited {
@@ -54,6 +54,10 @@ const Layout = props => (
       @media only screen and (max-width: 600px) {
         body {
           font-size: 22px;
+        }
+
+        li {
+          padding-bottom: 5px;
         }
       }
 
