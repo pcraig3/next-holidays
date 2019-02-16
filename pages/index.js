@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
 
 const Index = ({ provinces }) => (
-  <Layout>
+  <Layout title="When is your next holiday">
     <h1>When is your next holiday?</h1>
     <ul>
       {provinces.map(province => (
@@ -11,6 +11,12 @@ const Index = ({ provinces }) => (
           <a href={`/provinces/${province.id}`}>{province.nameEn}</a>
         </li>
       ))}
+    </ul>
+    <hr />
+    <ul>
+      <li>
+        <a href="/federal">I work for the federal government</a>
+      </li>
     </ul>
   </Layout>
 )

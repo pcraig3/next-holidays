@@ -1,19 +1,8 @@
 import PropTypes from 'prop-types'
-import { displayDate, relativeDate } from '../utils/dates.js'
+import { relativeDate } from '../utils/dates.js'
+import { getPossessive, space2Nbsp } from '../utils/strings.js'
+import DateHtml from './DateHtml'
 import BottomLink from './BottomLink'
-
-const space2Nbsp = str => str.replace(/ /g, ' ')
-
-const getPossessive = name => {
-  return name.endsWith('s') ? `${name}’` : `${name}’s`
-}
-
-const DateHtml = ({ dateString }) => (
-  <time dateTime={dateString}>{displayDate(dateString)}</time>
-)
-DateHtml.propTypes = {
-  dateString: PropTypes.string,
-}
 
 const HolidaysLink = ({ nameEn }) => (
   <BottomLink href={'/'} linkText={`Not from ${nameEn}?`} />

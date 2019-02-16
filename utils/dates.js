@@ -2,13 +2,14 @@ import format from 'date-fns/format'
 import formatDistance from 'date-fns/formatDistance'
 import addMinutes from 'date-fns/addMinutes'
 import differenceInDays from 'date-fns/differenceInDays'
+import { space2Nbsp } from './strings.js'
 
 // 60 minutes * 24 hours = 1440
 export const getDateBeforeMidnightFromString = str =>
   addMinutes(new Date(str), 1439)
 
 export const displayDate = dateString =>
-  format(getDateBeforeMidnightFromString(dateString), 'MMMM do')
+  space2Nbsp(format(getDateBeforeMidnightFromString(dateString), 'MMMM do'))
 
 export const relativeDate = dateString => {
   const daysOffset = differenceInDays(
