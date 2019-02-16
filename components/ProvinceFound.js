@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import format from 'date-fns/format'
 import formatDistance from 'date-fns/distance_in_words_to_now'
 import addHours from 'date-fns/add_hours'
@@ -12,12 +13,18 @@ const DateHtml = ({ dateString }) => (
     {format(getDateAtNoonFromString(dateString), 'MMMM Do')}
   </time>
 )
+DateHtml.propTypes = {
+  dateString: PropTypes.string,
+}
 
 const HolidaysLink = ({ nameEn }) => (
   <BottomLink href={'/'} linkText={`Not from ${nameEn}?`} />
 )
+HolidaysLink.propTypes = {
+  nameEn: PropTypes.string,
+}
 
-export default ({ province }) => (
+const ProvinceFound = ({ province }) => (
   <React.Fragment>
     <h1>
       {province.nameEn}’s next public holiday is{' '}
@@ -25,9 +32,15 @@ export default ({ province }) => (
       <DateHtml dateString={province.nextHoliday.date} />.
     </h1>
     <h2>
-      That's in{' '}
+      That’s in{' '}
       {formatDistance(getDateAtNoonFromString(province.nextHoliday.date))}.
     </h2>
     <HolidaysLink nameEn={province.nameEn} />
   </React.Fragment>
 )
+
+ProvinceFound.propTypes = {
+  province: PropTypes.object,
+}
+
+export default ProvinceFound

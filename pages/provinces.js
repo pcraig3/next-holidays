@@ -1,6 +1,5 @@
-import Link from 'next/link'
+import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
-import format from 'date-fns/format'
 import Layout from '../components/Layout'
 import ProvinceFound from '../components/ProvinceFound'
 import ProvinceNotFound from '../components/ProvinceNotFound'
@@ -35,6 +34,11 @@ Provinces.getInitialProps = async function(props) {
   }
 
   return { data, province }
+}
+
+Provinces.propTypes = {
+  data: PropTypes.object,
+  province: PropTypes.string,
 }
 
 export default Provinces

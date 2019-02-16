@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
 
@@ -18,13 +19,17 @@ Index.getInitialProps = async function() {
   let data = {}
 
   try {
-    const res = await fetch(`http://35.222.86.86:8080/v1/provinces`)
+    const res = await fetch('http://35.222.86.86:8080/v1/provinces')
     data = await res.json()
   } catch (e) {
     // in this case, we will still return an empty data object
   }
 
   return data
+}
+
+Index.propTypes = {
+  provinces: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 }
 
 export default Index

@@ -1,4 +1,6 @@
-export default ({ href, linkText }) => (
+import PropTypes from 'prop-types'
+
+const BottomLink = ({ href, linkText }) => (
   <React.Fragment>
     <p>
       <a href={href}>{`${linkText}`}</a>
@@ -11,3 +13,10 @@ export default ({ href, linkText }) => (
     `}</style>
   </React.Fragment>
 )
+
+BottomLink.propTypes = {
+  href: PropTypes.string,
+  linkText: PropTypes.string,
+}
+
+export default BottomLink

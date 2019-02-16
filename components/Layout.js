@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 const Layout = props => (
@@ -65,5 +66,10 @@ const Layout = props => (
     {props.children}
   </div>
 )
+
+Layout.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+}
 
 export default Layout
