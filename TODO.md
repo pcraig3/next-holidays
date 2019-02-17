@@ -1,6 +1,5 @@
 # to do
 
-- focus styles pls k thanks
 - more visual DeSiGn
 - more layout
 - new font
@@ -12,6 +11,7 @@
 
 # done
 
+- ✅ focus styles pls k thanks
 - ✅ add some bottom margin maybe
 - ✅ fix the apostrophe situation
   - ✅ always use curly quotes

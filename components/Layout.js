@@ -53,8 +53,14 @@ const Layout = props => (
         text-decoration: none;
       }
 
-      a:hover {
+      a:hover,
+      a:focus {
         text-decoration: underline;
+      }
+
+      *:focus {
+        outline: 3px solid #ffbf47;
+        outline-offset: 2px;
       }
 
       @media only screen and (max-width: 900px) {
