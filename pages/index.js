@@ -8,7 +8,7 @@ const Index = ({ provinces }) => (
     <p className="bottom-margin">
       <a href="/federal">I am a federal employee</a>.
     </p>
-    <p>I am not a federal employee. I live in:</p>
+    <p>I’m not a federal employee. I live in:</p>
     <ul>
       {provinces.map(province => (
         <li key={province.id}>

@@ -78,19 +78,13 @@ const Layout = props => (
         h2 {
           font-size: 180%;
         }
-
-        p {
-          margin-bottom: 5px;
-        }
-
-        li {
-          margin-bottom: 2px;
-        }
       }
 
       @media only screen and (max-width: 320px) {
         body {
           font-size: 18px;
+          padding-left: 10px;
+          padding-right: 5px;
         }
       }
     `}</style>
