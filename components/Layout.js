@@ -11,19 +11,21 @@ const Layout = props => (
       body {
         font-size: 28px;
         font-family: sans-serif;
+        line-height: 1.25;
         margin-top: 15px;
         padding-left: 15px;
         padding-right: 10px;
+        padding-bottom: 25px;
         max-width: 960px;
         background-color: snow;
       }
 
-      h1, h2 {
+      h1,
+      h2 {
         font-weight: 400;
         font-size: 200%;
         margin-top: 0;
-        margin-bottom: 25px;
-        }
+        margin-bottom: 20px;
       }
 
       ul {
@@ -33,10 +35,20 @@ const Layout = props => (
       }
 
       li {
-        padding-bottom: 8px;
+        margin-bottom: 5px;
       }
 
-      a, a:visited {
+      p {
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      p.bottom-margin {
+        margin-bottom: 20px;
+      }
+
+      a,
+      a:visited {
         color: #0572d5;
         text-decoration: none;
       }
@@ -56,8 +68,17 @@ const Layout = props => (
           font-size: 22px;
         }
 
+        h1,
+        h2 {
+          font-size: 180%;
+        }
+
+        p {
+          margin-bottom: 5px;
+        }
+
         li {
-          padding-bottom: 5px;
+          margin-bottom: 2px;
         }
       }
 

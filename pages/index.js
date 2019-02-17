@@ -5,18 +5,16 @@ import Layout from '../components/Layout'
 const Index = ({ provinces }) => (
   <Layout title="When is your next holiday">
     <h1>When is your next holiday?</h1>
+    <p className="bottom-margin">
+      <a href="/federal">I am a federal employee</a>.
+    </p>
+    <p>I am not a federal employee. I live in:</p>
     <ul>
       {provinces.map(province => (
         <li key={province.id}>
           <a href={`/provinces/${province.id}`}>{province.nameEn}</a>
         </li>
       ))}
-    </ul>
-    <hr />
-    <ul>
-      <li>
-        <a href="/federal">I work for the federal government</a>
-      </li>
     </ul>
   </Layout>
 )

@@ -8,11 +8,11 @@
 - add in deploy script
 - add a README
 - add generic 404 page
-- add some bottom margin maybe
 - add google analytics
 
 # done
 
+- ✅ add some bottom margin maybe
 - ✅ fix the apostrophe situation
   - ✅ always use curly quotes
   - ✅ s apostrophe shouldn't be followed by an "s"
