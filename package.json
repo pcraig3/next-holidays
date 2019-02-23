@@ -1,7 +1,6 @@
 {
   "name": "next-holidays",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "date-fns": "^2.0.0-alpha.27",
@@ -10,7 +9,8 @@
     "next": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "react-dom": "^16.8.2",
+    "react-ga": "^2.5.7"
   },
   "devDependencies": {
     "eslint": "^5.14.0",

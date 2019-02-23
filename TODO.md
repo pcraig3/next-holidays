@@ -7,10 +7,10 @@
 - add in deploy script
 - add a README
 - add generic 404 page
-- add google analytics
 
 # done
 
+- ✅ add google analytics
 - ✅ focus styles pls k thanks
 - ✅ add some bottom margin maybe
 - ✅ fix the apostrophe situation

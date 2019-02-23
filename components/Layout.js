@@ -1,96 +1,117 @@
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
+import { initGA, logPageView } from '../utils/analytics.js'
 
-const Layout = props => (
-  <div role="main">
-    <Head>
-      <title>{props.title ? `${props.title} ` : 'next holidays'}</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <style jsx global>{`
-      body {
-        font-size: 28px;
-        font-family: sans-serif;
-        line-height: 1.25;
-        margin-top: 15px;
-        padding-left: 15px;
-        padding-right: 10px;
-        padding-bottom: 25px;
-        max-width: 960px;
-        background-color: snow;
+class Layout extends Component {
+  componentDidMount() {
+    if (process.env.NODE_ENV === 'production') {
+      if (window && !window.GA_INITIALIZED) {
+        initGA()
+        window.GA_INITIALIZED = true
       }
+      logPageView()
+    }
+  }
 
-      h1,
-      h2 {
-        font-weight: 400;
-        font-size: 200%;
-        margin-top: 0;
-        margin-bottom: 20px;
-      }
+  render() {
+    return (
+      <div role="main">
+        <Head>
+          <title>
+            {this.props.title ? `${this.props.title} ` : 'next holidays'}
+          </title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+        <style jsx global>{`
+          body {
+            font-size: 28px;
+            font-family: sans-serif;
+            line-height: 1.25;
+            margin-top: 15px;
+            padding-left: 15px;
+            padding-right: 10px;
+            padding-bottom: 25px;
+            max-width: 960px;
+            background-color: snow;
+          }
 
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
+          h1,
+          h2 {
+            font-weight: 400;
+            font-size: 200%;
+            margin-top: 0;
+            margin-bottom: 20px;
+          }
 
-      li {
-        margin-bottom: 5px;
-      }
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+          }
 
-      p {
-        margin-top: 0;
-        margin-bottom: 8px;
-      }
+          li {
+            margin-bottom: 5px;
+          }
 
-      p.bottom-margin {
-        margin-bottom: 20px;
-      }
+          p {
+            margin-top: 0;
+            margin-bottom: 8px;
+          }
 
-      a,
-      a:visited {
-        color: #0572d5;
-        text-decoration: none;
-      }
+          p.bottom-margin {
+            margin-bottom: 20px;
+          }
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-      }
+          a,
+          a:visited {
+            color: #0572d5;
+            text-decoration: none;
+          }
 
-      *:focus {
-        outline: 3px solid #ffbf47;
-        outline-offset: 2px;
-      }
+          a:hover,
+          a:focus {
+            text-decoration: underline;
+          }
 
-      @media only screen and (max-width: 900px) {
-        body {
-          font-size: 24px;
-        }
-      }
+          *:focus {
+            outline: 3px solid #ffbf47;
+            outline-offset: 2px;
+          }
 
-      @media only screen and (max-width: 600px) {
-        body {
-          font-size: 22px;
-        }
+          @media only screen and (max-width: 900px) {
+            body {
+              font-size: 24px;
+            }
+          }
 
-        h1,
-        h2 {
-          font-size: 180%;
-        }
-      }
+          @media only screen and (max-width: 600px) {
+            body {
+              font-size: 22px;
+            }
 
-      @media only screen and (max-width: 320px) {
-        body {
-          font-size: 18px;
-          padding-left: 10px;
-          padding-right: 5px;
-        }
-      }
-    `}</style>
-    {props.children}
-  </div>
-)
+            h1,
+            h2 {
+              font-size: 180%;
+            }
+          }
+
+          @media only screen and (max-width: 320px) {
+            body {
+              font-size: 18px;
+              padding-left: 10px;
+              padding-right: 5px;
+            }
+          }
+        `}</style>
+        {this.props.children}
+      </div>
+    )
+  }
+}
 
 Layout.propTypes = {
   title: PropTypes.string,
