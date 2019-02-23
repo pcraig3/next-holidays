@@ -4,12 +4,12 @@
 - more layout
 - new font
 - clean up index page
-- add in deploy script
 - add a README
 - add generic 404 page
 
 # done
 
+- ✅ add in deploy script
 - ✅ add google analytics
 - ✅ focus styles pls k thanks
 - ✅ add some bottom margin maybe
