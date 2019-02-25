@@ -9,7 +9,12 @@ export default class MyDocument extends Document {
   render() {
     return (
       <html lang="en">
-        <Head />
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

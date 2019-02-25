@@ -1,14 +1,13 @@
 # to do
 
-- more visual DeSiGn
 - more layout
-- new font
 - clean up index page
 - add a README
 - add generic 404 page
 
 # done
 
+- ✅ new font
 - ✅ add in deploy script
 - ✅ add google analytics
 - ✅ focus styles pls k thanks

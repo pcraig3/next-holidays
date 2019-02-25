@@ -29,7 +29,7 @@ class Layout extends Component {
         <style jsx global>{`
           body {
             font-size: 28px;
-            font-family: sans-serif;
+            font-family: 'IBM Plex Sans', sans-serif;
             line-height: 1.25;
             margin-top: 15px;
             padding-left: 15px;
@@ -37,6 +37,7 @@ class Layout extends Component {
             padding-bottom: 25px;
             max-width: 960px;
             background-color: snow;
+            font-weight: 400;
           }
 
           h1,
@@ -96,14 +97,20 @@ class Layout extends Component {
             h1,
             h2 {
               font-size: 180%;
+              font-weight: 500;
             }
           }
 
           @media only screen and (max-width: 320px) {
             body {
               font-size: 18px;
-              padding-left: 10px;
-              padding-right: 5px;
+              padding-left: 8px;
+              padding-right: 0;
+              font-weight: 500;
+            }
+
+            li {
+              margin-bottom: 7px;
             }
           }
         `}</style>
