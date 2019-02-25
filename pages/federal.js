@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import DateHtml from '../components/DateHtml'
+import Highlight from '../components/Highlight'
 import BottomLink from '../components/BottomLink'
 import { relativeDate } from '../utils/dates.js'
 import { space2Nbsp } from '../utils/strings.js'
@@ -19,7 +20,11 @@ const Federal = ({ data: holiday }) => (
   <Layout title={'Federal employees’ next public holiday'}>
     <h1>
       As a federal employee, your next public holiday is{' '}
-      {space2Nbsp(holiday.nameEn)}, on <DateHtml dateString={holiday.date} />.
+      {space2Nbsp(holiday.nameEn)}, on{' '}
+      <Highlight>
+        <DateHtml dateString={holiday.date} />
+      </Highlight>
+      .
     </h1>
     <h2>{relativeDate(holiday.date)}</h2>
 
