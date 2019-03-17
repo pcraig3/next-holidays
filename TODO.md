@@ -7,7 +7,8 @@
 
 # done
 
-- ✅ new font
+- ✅ add Dockerfile
+- ✅ make API URL + port configurable
 - ✅ add in deploy script
 - ✅ add google analytics
 - ✅ focus styles pls k thanks
