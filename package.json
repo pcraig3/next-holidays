@@ -2,6 +2,11 @@
   "name": "next-holidays",
   "version": "1.0.0",
   "license": "MIT",
+  "description": "When is your next holiday?",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pcraig3/next-holidays"
+  },
   "dependencies": {
     "date-fns": "^2.0.0-alpha.27",
     "express": "^4.16.4",
