@@ -5,6 +5,7 @@ import Highlight from '../components/Highlight'
 import BottomLink from '../components/BottomLink'
 import { relativeDate } from '../utils/dates.js'
 import { space2Nbsp } from '../utils/strings.js'
+import apiUrl from '../utils/apiUrl'
 
 const getNextHoliday = holidays => {
   const today = new Date()
@@ -36,7 +37,7 @@ Federal.getInitialProps = async function() {
   let data = {}
 
   try {
-    const res = await fetch('http://35.222.86.86:8080/v1/holidays?federal=true')
+    const res = await fetch(`${apiUrl}/v1/holidays?federal=true`)
     data = await res.json()
   } catch (e) {
     return { data }

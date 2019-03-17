@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
-import getConfig from 'next/config'
-const { publicRuntimeConfig } = getConfig()
+import apiUrl from '../utils/apiUrl'
 
 const Index = ({ provinces }) => (
   <Layout title="When is your next holiday">
@@ -25,7 +24,7 @@ Index.getInitialProps = async function() {
   let data = { provinces: [] }
 
   try {
-    const res = await fetch(`${publicRuntimeConfig.apiUrl}/v1/provinces`)
+    const res = await fetch(`${apiUrl}/v1/provinces`)
     data = await res.json()
   } catch (e) {
     // in this case, we will still return an empty data object

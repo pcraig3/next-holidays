@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
 import ProvinceFound from '../components/ProvinceFound'
 import ProvinceNotFound from '../components/ProvinceNotFound'
+import apiUrl from '../utils/apiUrl'
 
 const Provinces = ({ data, province }) => (
   <Layout
@@ -27,7 +28,7 @@ Provinces.getInitialProps = async function(props) {
   const notFound = { data, province }
 
   try {
-    const res = await fetch(`http://35.222.86.86:8080/v1/provinces/${province}`)
+    const res = await fetch(`${apiUrl}/v1/provinces/${province}`)
     data = await res.json()
   } catch (e) {
     return notFound
