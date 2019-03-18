@@ -30,6 +30,7 @@
   },
   "now": {
     "version": 2,
-    "public": true
+    "public": true,
+    "type": "npm"
   }
 }
