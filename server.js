@@ -1,5 +1,6 @@
 const express = require('express')
 const next = require('next')
+const helmet = require('helmet')
 const LRUCache = require('lru-cache')
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -21,6 +22,7 @@ app
   .prepare()
   .then(() => {
     const server = express()
+    server.use(helmet()).disable('x-powered-by')
 
     server.get('/provinces', (req, res) => {
       res.redirect('/')
