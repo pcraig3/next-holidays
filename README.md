@@ -41,7 +41,18 @@ npm run lint
 docker build -t pcraig3/next-holidays .
 
 # run the container
-docker run -it -e PORT=80 -p 80:80 pcraig3/next-holidays
+docker run -it -p 80:80 pcraig3/next-holidays
 ```
 
 On a Mac, press `Control` + `C` to quit the running docker container.
+
+### Overriding the default port number or API URL
+
+The Dockerfile sets default values for `PORT` and `API_URL`.
+
+To override either or both of these environment variables at runtime, pass in the new variable after the `-e` flag when booting up the container container.
+
+```bash
+# override the port number and the API_URL
+docker run -it -e API_URL=https://example.com -e PORT=3000 -p 80:3000 pcraig3/next-holidays
+```
