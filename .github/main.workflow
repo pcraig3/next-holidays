@@ -20,16 +20,16 @@ action "Run JS linter" {
   args = "run lint"
 }
 
-action "If workflow branch" {
+action "If master branch" {
   uses = "actions/bin/filter@24a566c2524e05ebedadef0a285f72dc9b631411"
   needs = ["Run JS linter", "Lint Dockerfile"]
-  args = "branch workflow"
+  args = "branch master"
 }
 
 action "Login into Docker Hub" {
   uses = "actions/docker/login@8cdf801b322af5f369e00d85e9cf3a7122f49108"
   secrets = ["DOCKER_USERNAME", "DOCKER_PASSWORD"]
-  needs = ["If workflow branch"]
+  needs = ["If master branch"]
 }
 
 action "Build a Docker container" {
