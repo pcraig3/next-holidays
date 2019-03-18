@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
 import DateHtml from '../components/DateHtml'
 import Highlight from '../components/Highlight'
