@@ -41,17 +41,17 @@ action "Build a Docker container" {
 action "Tag :latest" {
   uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
   needs = ["Build a Docker container"]
-  args = "tag base cdssnc/az-next:latest"
+  args = "tag base cdssnc/next-holidays:latest"
 }
 
 action "Tag :$GITHUB_SHA" {
   uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
   needs = ["Tag :latest"]
-  args = "tag base cdssnc/az-next:$GITHUB_SHA"
+  args = "tag base cdssnc/next-holidays:$GITHUB_SHA"
 }
 
 action "Push container to Docker Hub" {
   uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
   needs = ["Tag :$GITHUB_SHA"]
-  args = "push cdssnc/az-next"
+  args = "push cdssnc/next-holidays"
 }
