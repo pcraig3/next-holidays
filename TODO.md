@@ -1,11 +1,11 @@
 # to do
 
 - more layout
-- add a README
 - add generic 404 page
 
 # done
 
+- ✅ add a README
 - ✅ speed up index page
 - ✅ add Dockerfile
 - ✅ make API URL + port configurable
