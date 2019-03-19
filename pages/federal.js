@@ -6,7 +6,7 @@ import Highlight from '../components/Highlight'
 import BottomLink from '../components/BottomLink'
 import { relativeDate } from '../utils/dates.js'
 import { space2Nbsp } from '../utils/strings.js'
-import apiUrl from '../utils/apiUrl'
+import { apiUrl } from '../utils/envVars'
 
 const getNextHoliday = holidays => {
   const today = new Date()
