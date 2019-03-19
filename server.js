@@ -2,6 +2,7 @@ const express = require('express')
 const next = require('next')
 const helmet = require('helmet')
 const LRUCache = require('lru-cache')
+const csp = require('./utils/csp')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -22,24 +23,13 @@ app
   .prepare()
   .then(() => {
     const server = express()
-    server
-      .use(helmet())
-      .use(
-        helmet.contentSecurityPolicy({
-          directives: {
-            defaultSrc: ["'self'"],
-            fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-            imgSrc: ["'self'", 'https://www.google-analytics.com'],
-            scriptSrc: ["'self'", 'https://www.google-analytics.com'],
-            styleSrc: [
-              "'self'",
-              'https://fonts.googleapis.com',
-              "'unsafe-inline'",
-            ],
-          },
-        }),
-      )
-      .disable('x-powered-by')
+
+    if (!dev) {
+      server
+        .use(helmet())
+        .use(helmet.contentSecurityPolicy({ directives: csp }))
+        .disable('x-powered-by')
+    }
 
     server.get('/provinces', (req, res) => {
       res.redirect('/')
