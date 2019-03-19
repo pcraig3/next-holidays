@@ -1,5 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import apiUrl from '../utils/apiUrl'
+import { apiUrl, githubSha } from '../utils/envVars'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -15,7 +15,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500"
             rel="stylesheet"
           />
-          <meta name="keywords" content={`api_url=${apiUrl}`} />
+          {process.env.GITHUB_SHA ? (
+            <meta name="keywords" content={`GITHUB_SHA=${githubSha}`} />
+          ) : null}
+          <meta name="keywords" content={`API_URL=${apiUrl}`} />
         </Head>
         <body>
           <Main />

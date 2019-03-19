@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
 import ProvinceFound from '../components/ProvinceFound'
 import ProvinceNotFound from '../components/ProvinceNotFound'
-import apiUrl from '../utils/apiUrl'
+import { apiUrl } from '../utils/envVars'
 
 const Provinces = ({ data, province }) => (
   <Layout
