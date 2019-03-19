@@ -15,6 +15,12 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500"
             rel="stylesheet"
           />
+          {process.env.GITHUB_SHA ? (
+            <meta
+              name="keywords"
+              content={`GITHUB_SHA=${process.env.GITHUB_SHA}`}
+            />
+          ) : null}
           <meta name="keywords" content={`api_url=${apiUrl}`} />
         </Head>
         <body>
