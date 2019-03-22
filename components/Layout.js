@@ -2,12 +2,13 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { initGA, logPageView } from '../utils/analytics.js'
+import { gaId } from '../utils/envVars'
 
 class Layout extends Component {
   componentDidMount() {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && gaId) {
       if (window && !window.GA_INITIALIZED) {
-        initGA()
+        initGA(gaId)
         window.GA_INITIALIZED = true
       }
       logPageView()

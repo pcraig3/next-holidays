@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga'
 
-export const initGA = () => {
-  ReactGA.initialize('UA-37633400-9')
+export const initGA = gaId => {
+  ReactGA.initialize(gaId)
   ReactGA.set({ anonymizeIp: true })
 }
 
