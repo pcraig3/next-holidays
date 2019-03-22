@@ -1,6 +1,8 @@
 FROM node:lts-alpine
 LABEL maintainer="paul.craig@cds-snc.ca"
 
+ENV GA_ID=""
+
 ENV PORT=80
 ENV API_URL="https://holidays-canada.azurewebsites.net"
 
