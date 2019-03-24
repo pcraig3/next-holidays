@@ -48,11 +48,11 @@ On a Mac, press `Control` + `C` to quit the running docker container.
 
 ### Overriding the default port number or API URL
 
-The Dockerfile sets default values for `PORT` and `API_URL`.
+[The Dockerfile](https://github.com/cds-snc/next-holidays/blob/master/Dockerfile) sets default values for `PORT` (`80`) and `API_URL` (`https://holidays-canada.azurewebsites.net`).
 
-To override either or both of these environment variables at runtime, pass in the new variable after the `-e` flag when booting up the container container.
+To override either or both of these environment variables at runtime, pass in the new variable after the `-e` flag when booting up the container.
 
 ```bash
 # override the port number and the API_URL
-docker run -it -e API_URL=https://example.com -e PORT=3000 -p 80:3000 pcraig3/next-holidays
+docker run -it -e PORT=3000 -e API_URL=https://example.com -p 80:3000 pcraig3/next-holidays
 ```
