@@ -1,4 +1,8 @@
+const config = require('../next.config.js')
+const apiUrl = config.publicRuntimeConfig.apiUrl.replace(/\/$/, '')
+
 module.exports = {
+  connectSrc: ["'self'", apiUrl],
   defaultSrc: ["'self'"],
   fontSrc: ["'self'", 'https://fonts.gstatic.com'],
   imgSrc: ["'self'", 'https://www.google-analytics.com'],
