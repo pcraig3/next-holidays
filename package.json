@@ -20,6 +20,7 @@
     "react-ga": "^2.6.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "eslint": "^6.4.0",
     "eslint-plugin-react": "^7.14.3"
   },
