@@ -1,3 +1,5 @@
+![](https://github.com/cds-snc/next-holidays/workflows/.github/workflows/testAndDeploy.yml/badge.svg)
+
 # Next Holidays
 
 This is a small frontend that reads from the [holidays-canada](https://github.com/cds-snc/holidays-canada) API. It shows you your next provincial or federal holiday, and doesn't do much else.
