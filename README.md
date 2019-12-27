@@ -2,7 +2,9 @@
 
 # Next Holidays
 
-This is a small frontend that reads from the [hols](https://github.com/pcraig3/hols/blob/master/API.md) API. It shows you your next provincial or federal holiday, and doesn't do much else.
+This is a <sup>very tiny</sup> [Next.js](https://nextjs.org/) frontend that reads from the [hols](https://github.com/pcraig3/hols/blob/master/API.md) API for Canadian statutory holidays. It will tell you your next provincial or federal holiday, and doesn't do much else.
+
+Try it out 👉 [https://next-holidays.azurewebsites.net/](https://next-holidays.azurewebsites.net/)
 
 ## Getting started
 
@@ -50,7 +52,7 @@ On a Mac, press `Control` + `C` to quit the running docker container.
 
 ### Overriding the default port number or API URL
 
-[The Dockerfile](https://github.com/cds-snc/next-holidays/blob/master/Dockerfile) sets default values for `PORT` (`80`) and `API_URL` (`https://holidays-canada.azurewebsites.net`).
+[The Dockerfile](https://github.com/cds-snc/next-holidays/blob/master/Dockerfile) sets default values for `PORT` (`80`) and `API_URL` (`https://canada-holidays.ca/api`).
 
 To override either or both of these environment variables at runtime, pass in the new variable after the `-e` flag when booting up the container.
 
