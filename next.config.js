@@ -5,7 +5,7 @@ module.exports = {
   },
   publicRuntimeConfig: {
     // Will be available on both server and client
-    apiUrl: process.env.API_URL || 'https://holidays-canada.azurewebsites.net',
+    apiUrl: process.env.API_URL || 'https://canada-holidays.ca/api',
     gaId: process.env.GA_ID || false,
   },
 }

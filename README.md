@@ -2,7 +2,7 @@
 
 # Next Holidays
 
-This is a small frontend that reads from the [holidays-canada](https://github.com/cds-snc/holidays-canada) API. It shows you your next provincial or federal holiday, and doesn't do much else.
+This is a small frontend that reads from the [hols](https://github.com/pcraig3/hols/blob/master/API.md) API. It shows you your next provincial or federal holiday, and doesn't do much else.
 
 ## Getting started
 
