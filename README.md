@@ -1,4 +1,4 @@
-![](https://github.com/cds-snc/next-holidays/workflows/Test,%20build,%20deploy/badge.svg)
+![](https://github.com/cds-snc/next-holidays/workflows/Test,%20build,%20and%20push/badge.svg)
 
 # Next Holidays
 
