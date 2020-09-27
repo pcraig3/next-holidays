@@ -1,4 +1,5 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
 import { apiUrl, githubSha } from '../utils/envVars'
 
 export default class MyDocument extends Document {
@@ -9,7 +10,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
           <link
             href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500"
@@ -24,7 +25,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }
