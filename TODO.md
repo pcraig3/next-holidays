@@ -7,6 +7,8 @@
 
 # done
 
+- ✅ move to cloud run
+- ✅ update README
 - ✅ add generic 404 page
 - ✅ add a README
 - ✅ speed up index page

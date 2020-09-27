@@ -4,7 +4,7 @@
 
 This is a <sup>very tiny</sup> [Next.js](https://nextjs.org/) frontend that reads from the [hols](https://github.com/pcraig3/hols/blob/master/API.md) API for Canadian statutory holidays. It will tell you your next provincial or federal holiday, and doesn't do much else.
 
-Try it out 👉 [https://next-holidays.azurewebsites.net/](https://next-holidays.azurewebsites.net/)
+Try it out 👉 [https://next-holidays-7qr7hdv3aa-ue.a.run.app/](https://next-holidays-7qr7hdv3aa-ue.a.run.app/)
 
 ## Getting started
 
