@@ -1,10 +1,13 @@
 # to do
 
 - more layout
-- add generic 404 page
+- move to cloud run
+- automate deploys
+- update README
 
 # done
 
+- ✅ add generic 404 page
 - ✅ add a README
 - ✅ speed up index page
 - ✅ add Dockerfile
