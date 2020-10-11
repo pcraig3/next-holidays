@@ -6,7 +6,7 @@ import BottomLink from '../components/BottomLink'
 class Error extends React.Component {
   render() {
     return (
-      <Layout title={`404 error`}>
+      <Layout title={'404 error'}>
         <h1>
           404{' '}
           <span role="img" aria-label="Exploding head">
