@@ -8,7 +8,5 @@ jobs:
       - uses: actions/checkout@master
       - name: Install npm dependencies
         run: npm install
-      - name: Lint Dockerfile
-        uses: docker://cdssnc/docker-lint
       - name: Run JS linter
         run: npm run lint
