@@ -8,4 +8,6 @@ node_modules
 
 .next-holidays*.json
 
-public/sw.js
+# pwa stuff
+public/sw*
+public/workbox*
