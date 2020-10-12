@@ -11,13 +11,13 @@ export const getDateBeforeMidnightFromString = (str) => addMinutes(new Date(str)
 export const displayDate = (dateString) =>
   space2Nbsp(format(getDateBeforeMidnightFromString(dateString), 'MMMM do'))
 
-export const relativeDate = (dateString) => {
-  const daysOffset = differenceInDays(
-    startOfDay(getDateBeforeMidnightFromString(dateString)),
-    startOfDay(new Date()),
-  )
+export const daysOffset = (dateString) =>
+  differenceInDays(startOfDay(getDateBeforeMidnightFromString(dateString)), startOfDay(new Date()))
 
-  switch (daysOffset) {
+export const relativeDate = (dateString) => {
+  const _daysOffset = daysOffset(dateString)
+
+  switch (_daysOffset) {
     case 0:
       return 'That’s today! 🥳🥂🎊'
     case 1:

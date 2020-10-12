@@ -5,13 +5,12 @@ import DateHtml from '../components/DateHtml'
 import Highlight from '../components/Highlight'
 import BottomLink from '../components/BottomLink'
 import { relativeDate } from '../utils/dates.js'
-import { space2Nbsp } from '../utils/strings.js'
 import { apiUrl } from '../utils/envVars'
+import { daysOffset } from '../utils/dates'
 
-const getNextHoliday = holidays => {
-  const today = new Date()
+const getNextHoliday = (holidays) => {
   for (const holiday of holidays) {
-    if (today < new Date(holiday.date)) {
+    if (daysOffset(holiday.date) > -1) {
       return holiday
     }
   }
