@@ -1,6 +1,6 @@
 {
   "name": "next-holidays",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "description": "When is your next holiday?",
   "repository": {
@@ -30,10 +30,5 @@
     "build": "next build",
     "lint": "eslint pages components",
     "start": "NODE_ENV=production node server.js"
-  },
-  "now": {
-    "version": 2,
-    "public": true,
-    "type": "npm"
   }
 }
