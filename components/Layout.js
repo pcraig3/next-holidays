@@ -19,26 +19,31 @@ class Layout extends Component {
     return (
       <div role="main">
         <Head>
-          <title>
-            {this.props.title ? `${this.props.title} ` : 'next holidays'}
-          </title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
+          <title>{this.props.title ? `${this.props.title} ` : 'next holidays'}</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <style jsx global>{`
           body {
             font-size: 28px;
             font-family: 'IBM Plex Sans', sans-serif;
             line-height: 1.25;
-            margin-top: 15px;
-            padding-left: 15px;
-            padding-right: 10px;
+            margin: 0;
+            min-height: 100vh;
+            background: rgb(255, 255, 255);
+            background: linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(255, 248, 248, 1) 80%
+            );
+            font-weight: 400;
+          }
+
+          div[role='main'] {
+            padding-top: 15px;
+            padding-left: 25px;
+            padding-right: 20px;
             padding-bottom: 25px;
             max-width: 960px;
-            background-color: snow;
-            font-weight: 400;
           }
 
           h1,

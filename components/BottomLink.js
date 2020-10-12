@@ -8,7 +8,7 @@ const BottomLink = ({ href, linkText }) => (
     <style jsx>{`
       p {
         position: fixed;
-        bottom: 10px;
+        bottom: 20px;
       }
     `}</style>
   </React.Fragment>
