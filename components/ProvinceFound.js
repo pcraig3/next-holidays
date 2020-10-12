@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types'
 import { relativeDate } from '../utils/dates.js'
-import { getPossessive, space2Nbsp } from '../utils/strings.js'
+import { getPossessive } from '../utils/strings.js'
 import DateHtml from './DateHtml'
 import Highlight from './Highlight'
 import BottomLink from './BottomLink'
 
-const HolidaysLink = ({ nameEn }) => (
-  <BottomLink href={'/'} linkText={`Not from ${nameEn}?`} />
-)
+const HolidaysLink = ({ nameEn }) => <BottomLink href={'/'} linkText={`Not from ${nameEn}?`} />
 HolidaysLink.propTypes = {
   nameEn: PropTypes.string,
 }
@@ -15,8 +13,7 @@ HolidaysLink.propTypes = {
 const ProvinceFound = ({ province }) => (
   <React.Fragment>
     <h1>
-      {getPossessive(province.nameEn)} next public holiday is{' '}
-      {space2Nbsp(province.nextHoliday.nameEn)}, on{' '}
+      {getPossessive(province.nameEn)} next public holiday is {province.nextHoliday.nameEn}, on{' '}
       <Highlight>
         <DateHtml dateString={province.nextHoliday.date} />
       </Highlight>

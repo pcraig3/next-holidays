@@ -21,8 +21,7 @@ const getNextHoliday = holidays => {
 const Federal = ({ data: holiday }) => (
   <Layout title={'Federal employees’ next public holiday'}>
     <h1>
-      As a federal employee, your next public holiday is{' '}
-      {space2Nbsp(holiday.nameEn)}, on{' '}
+      As a federal employee, your next public holiday is {holiday.nameEn}, on{' '}
       <Highlight>
         <DateHtml dateString={holiday.date} />
       </Highlight>
@@ -34,7 +33,7 @@ const Federal = ({ data: holiday }) => (
   </Layout>
 )
 
-Federal.getInitialProps = async function() {
+Federal.getInitialProps = async function () {
   let data = {}
 
   try {
